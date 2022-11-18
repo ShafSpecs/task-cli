@@ -1,9 +1,9 @@
 package main
 
 import (
-	"cli-task-manager/cmd"
-	"cli-task-manager/db"
 	"fmt"
+	"github.com/ShafSpecs/task/cmd"
+	"github.com/ShafSpecs/task/db"
 	"github.com/logrusorgru/aurora/v4"
 )
 

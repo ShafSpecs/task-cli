@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"cli-task-manager/db"
 	"fmt"
+	"github.com/ShafSpecs/task/db"
 	"github.com/logrusorgru/aurora/v4"
 	"github.com/spf13/cobra"
 )
