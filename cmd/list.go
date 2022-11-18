@@ -18,9 +18,14 @@ var listCmd = &cobra.Command{
 			gives you all`,
 	Run: func(cmd *cobra.Command, args []string) {
 		items := db.ListBucketItems("tasks")
+		current := 1
 
-		for k, v := range items {
-			fmt.Printf("%s. %s\n", aurora.Magenta(k), v)
+		for _, v := range items {
+			fmt.Printf("%d. %s\n", aurora.Magenta(current), v)
+			current++
 		}
 	},
 }
+
+//todo: Display something when map is empty
+//todo: Display this after a task is done...
