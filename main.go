@@ -10,7 +10,8 @@ import (
 func main() {
 	err := db.OpenDB()
 	if err != nil {
-		fmt.Println(aurora.Bold(aurora.Red("Task is already running!")))
+		fmt.Println(aurora.Bold(aurora.Red("Error opening memory file!")))
+		fmt.Println(aurora.Red(err))
 		return
 	}
 

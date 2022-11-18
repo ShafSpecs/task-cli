@@ -2,6 +2,8 @@ package db
 
 import (
 	"github.com/boltdb/bolt"
+	"github.com/mitchellh/go-homedir"
+	"os"
 	"strconv"
 	"time"
 )
@@ -9,7 +11,13 @@ import (
 var Db *bolt.DB
 
 func OpenDB() error {
-	db, err := bolt.Open("tasks.db", 0600, &bolt.Options{Timeout: 1 * time.Second})
+	dir, _ := homedir.Dir()
+
+	if _, err := os.Stat(dir + "/.tasks"); os.IsNotExist(err) {
+		_ = os.Mkdir(dir+"/.tasks", 0766)
+	}
+
+	db, err := bolt.Open(dir+"/.tasks/tasks.db", 0600, &bolt.Options{Timeout: 1 * time.Second})
 
 	if err != nil {
 		return err
