@@ -18,6 +18,12 @@ var listCmd = &cobra.Command{
 			gives you all`,
 	Run: func(cmd *cobra.Command, args []string) {
 		items := db.ListBucketItems("tasks")
+
+		if len(items) == 0 {
+			fmt.Println(aurora.Bold(aurora.Magenta("No task added yet!")), "Use the \"add\" command to start adding tasks.")
+			return
+		}
+
 		current := 1
 
 		for _, v := range items {
@@ -27,5 +33,6 @@ var listCmd = &cobra.Command{
 	},
 }
 
-//todo: Display something when map is empty
+//todo: Flags for version, etc.
+//todo: config file
 //todo: Display this after a task is done...
