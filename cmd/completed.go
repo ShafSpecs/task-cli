@@ -25,3 +25,5 @@ var completedCmd = &cobra.Command{
 		}
 	},
 }
+
+//todo: Add ability to give `completed` timeframe

@@ -34,5 +34,6 @@ var listCmd = &cobra.Command{
 }
 
 //todo: Flags for version, etc.
-//todo: config file
+//todo: config file for storing meta (...idk)
 //todo: Display this after a task is done...
+//todo: Consider a priority option that allows them to list it according to priority or time added.
